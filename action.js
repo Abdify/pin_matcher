@@ -17,9 +17,8 @@ document.onload = userPinDisplay.value = '';
 
 numberBtns.addEventListener('click', (e) => {
     let digit = e.target.innerText;
-    if(e.target.type === 'submit' && newPin !== ''){
+    if(e.target.type === 'submit' && newPin !== 0){
         matchPin(userPinDisplay.value);
-
         userPinDisplay.value = '';
     }
     else if(/\d/.test(digit) && digit.length === 1){
@@ -43,7 +42,7 @@ function matchPin(userPin){
         document.querySelector('.notify:nth-child(1)').style.display = 'block';
     }
     
-    newPin = '';
+    newPin = 0;
     generatedPin.value = '';
 }
 
